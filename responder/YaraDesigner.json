@@ -9,6 +9,9 @@
   "command": "YaraDesigner/yara_designer_responder.py",
   "baseConfig": "YARA Designer",
   "config": {
-    "designer_core_endpoint": "http://127.0.0.1:5001/cortex-responder"
+    "designer_core_endpoint": "http://127.0.0.1:5001/cortex-responder",
+    "operations": [
+       { "type": "AddTagToCase", "tag": "Sent to YARA Designer" }
+    ]
   }
 }
