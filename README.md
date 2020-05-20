@@ -14,6 +14,7 @@ a Yara rule based on it.
         - url (The URL where the responder is stored (git).)
         - config
             - designer_core_endpoint
+            - operations (list of dicts with TheHive operations to be applied to case after processing (e.g. set a "Sent to YARA Designer" tag)).
 3. Upload contents of `responder/` to `CORTEX_RESPONDERS/YaraDesigner/` on Cortex host.
 4. Restart TheHive and Cortex:
     ```
