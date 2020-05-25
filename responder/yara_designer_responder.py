@@ -13,7 +13,7 @@ TH_DATATYPE_ALERT = "thehive:alert"
 TH_DATATYPE_CASE = "thehive:case"
 
 
-class YaraWhitelistRuleCreator(Responder):
+class YaraDesignerResponder(Responder):
     def __init__(self):
         Responder.__init__(self)
 
@@ -50,5 +50,5 @@ class YaraWhitelistRuleCreator(Responder):
 
 
 if __name__ == "__main__":
-    YaraWhitelistRuleCreator().run()
+    YaraDesignerResponder().run()
 
