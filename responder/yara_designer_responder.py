@@ -27,15 +27,21 @@ class YaraWhitelistRuleCreator(Responder):
             self.error("Invalid dataType: got '{}', expected '{}'!".format(self.data_type, TH_DATATYPE_CASE))
 
         # POST data to YARA Designer core endpoint.
-        r = requests.post(self.endpoint, json=self.get_data(), headers={'Content-type': 'application/json'})
+        try:
+            r = requests.post(self.endpoint, json=self.get_data(), headers={'Content-type': 'application/json'})
 
-        if r.status_code != 200:
-            self.error("POST Request to {} failed with status: {} {}!".format(self.endpoint, r.status_code,
-                                                                              r.reason))
+            if r.status_code != 200:
+                self.error("POST Request to {endpoint} failed with status: {code} {reason}! Data: {data}".format(
+                    endpoint=self.endpoint,
+                    code=r.status_code,
+                    reason=r.reason,
+                    data=r.text))
 
-        js = json.loads(r.text)
+            js = json.loads(r.text)
 
-        self.report(js)
+            self.report(js)
+        except Exception as exc:
+            self.error("An unexpected Exception occurred: {exc}".format(exc=str(exc)))
 
     def operations(self, raw):
         retv = self.config["operations"] if "operations" in self.config else []
