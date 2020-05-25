@@ -1,7 +1,7 @@
-# TheHive/Cortex Responder
+# YARA Designer: TheHive/Cortex Responder
 
 This responder sends a `thehive:case` to a listener which then creates
-a Yara rule based on it.
+a YARA rule based on it.
 
 ## Setup
 
@@ -9,7 +9,7 @@ a Yara rule based on it.
     ```
     $ sudo pip3 install cortexutils
     ```
-2. Configure `YaraWhitelistRuleCreator.json`.
+2. Configure `YaraDesigner.json`.
     - Notable settings:
         - url (The URL where the responder is stored (git).)
         - config
