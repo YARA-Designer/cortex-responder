@@ -1,0 +1,17 @@
+{
+  "name": "YARA Designer",
+  "version": "1.0.0",
+  "author": "Aleksander Berge Kjellsen",
+  "url": "https://github.com/TheHive-Project/Cortex-Analyzers",
+  "license": "AGPL-V3",
+  "description": "Send case to YARA Designer.",
+  "dataTypeList": ["thehive:case"],
+  "command": "YaraDesigner/yara_designer_responder.py",
+  "baseConfig": "YARA Designer",
+  "config": {
+    "designer_core_endpoint": "http://127.0.0.1:5001/cortex-responder",
+    "operations": [
+       { "type": "AddTagToCase", "tag": "Sent to YARA Designer" }
+    ]
+  }
+}
