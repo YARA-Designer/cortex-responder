@@ -4,7 +4,7 @@
   "author": "Aleksander Berge Kjellsen",
   "url": "https://github.com/TheHive-Project/Cortex-Analyzers",
   "license": "AGPL-V3",
-  "description": "Send a thehive:case to YARA Designer.",
+  "description": "Send case to YARA Designer.",
   "dataTypeList": ["thehive:case"],
   "command": "YaraDesigner/yara_designer_responder.py",
   "baseConfig": "YARA Designer",
