@@ -31,13 +31,6 @@
       "required": false
     },
     {
-      "name": "add_custom_fields",
-      "description": "Custom fields (JSON) the submitter system should add upon success.",
-      "type": "string",
-      "multi": true,
-      "required": false
-    },
-    {
       "name": "custom_operations",
       "description": "Raw operations (JSON) the submitter system should execute upon success.",
       "type": "string",

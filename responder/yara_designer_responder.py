@@ -23,7 +23,6 @@ class YaraDesignerResponder(Responder):
         [self.add_tag_to_case(tag) for tag in self.get_param("config.add_tags_to_case")]
 
         # Input will be on the form of a list of stringified JSON objects.
-        [self.add_operation(op) for op in self.get_param("config.add_custom_fields")]
         [self.add_operation(op) for op in self.get_param("config.custom_operations")]
 
     def add_operation(self, operation: str):
@@ -35,9 +34,7 @@ class YaraDesignerResponder(Responder):
         :return:
         """
         if operation:
-            print(operation)
             self.operations_list.append(json.loads(operation))
-            print(self.operations_list)
 
     def add_tag_to_artifact(self, tag: str):
         """
