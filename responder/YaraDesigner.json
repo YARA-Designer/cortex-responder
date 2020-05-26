@@ -1,0 +1,48 @@
+{
+  "name": "YARA Designer",
+  "version": "1.0.0",
+  "author": "Aleksander Berge Kjellsen",
+  "url": "https://github.com/TheHive-Project/Cortex-Analyzers",
+  "license": "AGPL-V3",
+  "description": "Send case to YARA Designer.",
+  "dataTypeList": ["thehive:case"],
+  "command": "YaraDesigner/yara_designer_responder.py",
+  "baseConfig": "YARA Designer",
+  "configurationItems": [
+    {
+      "name": "designer_core_endpoint",
+      "description": "URL to the YARA designer core/backend API endpoint.",
+      "type": "string",
+      "multi": false,
+      "required": true
+    },
+    {
+      "name": "add_tags_to_artifact",
+      "description": "Tags the submitter system should add to artifact upon success.",
+      "type": "string",
+      "multi": true,
+      "required": false
+    },
+    {
+      "name": "add_tags_to_case",
+      "description": "Tags the submitter system should add to case upon success.",
+      "type": "string",
+      "multi": true,
+      "required": false
+    },
+    {
+      "name": "add_custom_fields",
+      "description": "Custom fields (JSON) the submitter system should add upon success.",
+      "type": "string",
+      "multi": true,
+      "required": false
+    },
+    {
+      "name": "custom_operations",
+      "description": "Raw operations (JSON) the submitter system should execute upon success.",
+      "type": "string",
+      "multi": true,
+      "required": false
+    }
+  ]
+}

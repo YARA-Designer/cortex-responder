@@ -9,25 +9,19 @@ a YARA rule based on it.
     ```
     $ sudo pip3 install cortexutils
     ```
-2. Configure `YaraDesigner.json`.
-    - Notable settings:
-        - url (The URL where the responder is stored (git).)
-        - config
-            - designer_core_endpoint
-            - operations (list of dicts with TheHive operations to be applied to case after processing (e.g. set a "Sent to YARA Designer" tag)).
-3. Upload contents of `responder/` to `CORTEX_RESPONDERS/YaraDesigner/` on Cortex host.
-4. Restart TheHive and Cortex:
+2. Upload contents of `responder/` to `CORTEX_RESPONDERS/YaraDesigner/` on Cortex host.
+3. Restart TheHive and Cortex:
     ```
     $ sudo systemctl restart cortex thehive
     ```
-5. Enable the Cortex Responder:
+4. Enable the Cortex Responder:
     1. Log into Cortex with your TheHive user.
     2. Click "Organization" in the top bar.
     3. Click the "Responders" tab.
     4. Click the "+ Enable" link at the far right on the entry "YARA Designer <some version>".
-    5. Configure any options you want set and click "Save".
-    6. Click "Responders" in the top bar and verify that it is listed on the Responders page.
-6. 
+    5. Configure options and click "Save".
+    6. Click "Responders" in the top bar and verify that it is listed on the Responders page. 
 
+Tip: Responder script runtime stdout/stdin can be found in `/var/log/cortex/application.log`, should you need to diagnose any problems.
 
 Further documentation: https://github.com/TheHive-Project/CortexDocs/blob/master/api/how-to-create-a-responder.md
