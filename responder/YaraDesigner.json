@@ -10,7 +10,7 @@
   "baseConfig": "YARA Designer",
   "configurationItems": [
     {
-      "name": "designer_core_endpoint",
+      "name": "endpoint",
       "description": "URL to the YARA designer core/backend API endpoint.",
       "type": "string",
       "multi": false,
@@ -36,6 +36,14 @@
       "type": "string",
       "multi": true,
       "required": false
+    },
+    {
+      "name": "send_added_tags",
+      "description": "Whether or not to include the above tags in the case sent to YARA Designer. Useful for when resubmitting a case (i.e. it has already been tagged). (Default: False)",
+      "type": "boolean",
+      "required": false,
+      "multi": false,
+      "defaultValue": false
     }
   ]
 }
