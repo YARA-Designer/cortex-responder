@@ -39,11 +39,17 @@ class YaraDesignerResponder(Responder):
 
             js = json.loads(r.text)
 
-            self.report(js)
+            self.report({
+                "message": "Case with ID '{case_id}' was successfully sent to YARA Designer.".format(case_id=js["id"]),
+                "destination_endpoint": self.endpoint,
+                "out": js
+            })
         except Exception as exc:
             self.error("An unexpected Exception occurred: {exc}".format(exc=str(exc)))
 
     def operations(self, raw):
+        """Returns the list of operations to be executed after the job completes"""
+
         retv = self.config["operations"] if "operations" in self.config else []
 
         return retv
