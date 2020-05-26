@@ -35,7 +35,9 @@ class YaraDesignerResponder(Responder):
         :return:
         """
         if operation:
-            self.operations_list.extend([json.loads(json_str) for json_str in operation])
+            print(operation)
+            self.operations_list.append(json.loads(operation))
+            print(self.operations_list)
 
     def add_tag_to_artifact(self, tag: str):
         """
@@ -45,7 +47,7 @@ class YaraDesignerResponder(Responder):
         :return:
         """
         if tag:
-            self.operations_list.extend({"type": "AddTagToArtifact", "tag": tag})
+            self.operations_list.append({"type": "AddTagToArtifact", "tag": tag})
 
     def add_tag_to_case(self, tag: str):
         """
@@ -55,7 +57,7 @@ class YaraDesignerResponder(Responder):
         :return:
         """
         if tag:
-            self.operations_list.extend({"type": "AddTagToCase", "tag": tag})
+            self.operations_list.append({"type": "AddTagToCase", "tag": tag})
 
     def run(self):
         if self.data_type != TH_DATATYPE_CASE:
