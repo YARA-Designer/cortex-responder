@@ -9,7 +9,7 @@ TH_DATATYPE_ALERT = "thehive:alert"
 TH_DATATYPE_CASE = "thehive:case"
 
 
-class YaraDesignerResponder(Responder):
+class YaraDesigner(Responder):
     def __init__(self):
         Responder.__init__(self)
 
@@ -102,5 +102,5 @@ class YaraDesignerResponder(Responder):
 
 
 if __name__ == "__main__":
-    YaraDesignerResponder().run()
+    YaraDesigner().run()
 

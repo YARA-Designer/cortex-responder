@@ -1,17 +1,17 @@
 {
-  "name": "YARA Designer",
+  "name": "YARA-Designer",
   "version": "1.0.0",
-  "author": "Aleksander Berge Kjellsen",
+  "author": "Aleksander Berge Kjellsen <aleksb@sp-cert.no>",
   "url": "https://github.com/TheHive-Project/Cortex-Analyzers",
   "license": "AGPL-V3",
-  "description": "Send case to YARA Designer.",
+  "description": "Send case to YARA-Designer.",
   "dataTypeList": ["thehive:case"],
-  "command": "YaraDesigner/yara_designer_responder.py",
-  "baseConfig": "YARA Designer",
+  "command": "YARA-Designer/yara_designer.py",
+  "baseConfig": "YARA-Designer",
   "configurationItems": [
     {
       "name": "endpoint",
-      "description": "URL to the YARA designer core/backend API endpoint.",
+      "description": "URL to the YARA-Designer core/backend API endpoint.",
       "type": "string",
       "multi": false,
       "required": true
@@ -39,7 +39,7 @@
     },
     {
       "name": "send_added_tags",
-      "description": "Whether or not to include the above tags in the case sent to YARA Designer. Useful for when resubmitting a case (i.e. it has already been tagged). (Default: False)",
+      "description": "Whether or not to include the above tags in the case sent to YARA-Designer. Useful for when resubmitting a case (i.e. it has already been tagged). (Default: False)",
       "type": "boolean",
       "required": false,
       "multi": false,
